@@ -53,7 +53,7 @@ function getCurrentTabUrl(callback) {
  * @param {string} color The new background color.
  */
 function changeBackgroundColor(color) {
-  var script = 'var btn = document.createElement("BUTTON");var t = document.createTextNode("👏");btn.appendChild(t);document.body.appendChild(btn);';
+  var script = 'var btn = document.createElement("BUTTON");var t = document.createTextNode("PA");btn.appendChild(t);document.body.appendChild(btn);';
 
   // See https://developer.chrome.com/extensions/tabs#method-executeScript.
   // chrome.tabs.executeScript allows us to programmatically inject JavaScript
