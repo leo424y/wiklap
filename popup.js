@@ -53,7 +53,7 @@ function getCurrentTabUrl(callback) {
  * @param {string} color The new background color.
  */
 function changeBackgroundColor(color) {
-  var script = 'document.body.style.backgroundColor="' + color + '"; var btn = document.createElement("BUTTON");var t = document.createTextNode("'+status+'");btn.appendChild(t);document.body.appendChild(btn);';
+  var script = 'var btn = document.createElement("BUTTON");var t = document.createTextNode("'+status+'");btn.appendChild(t);document.body.appendChild(btn);';
 
   // See https://developer.chrome.com/extensions/tabs#method-executeScript.
   // chrome.tabs.executeScript allows us to programmatically inject JavaScript
@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ensure the background color is changed and saved when the dropdown
     // selection changes.
     dropdown.addEventListener('change', () => {
+      //加入按鈕
       changeBackgroundColor(dropdown.value);
       saveBackgroundColor(url, dropdown.value);
     });
